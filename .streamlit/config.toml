@@ -1,10 +1,13 @@
 [browser]
-serverAddress = "localhost"
 gatherUsageStats = false
 
 [server]
 headless = true
-port = 8501
+# Bind all interfaces: Render's proxy connects over the container's network.
+# `serverAddress` is intentionally unset; pointing the browser at "localhost"
+# breaks the WebSocket handshake behind Render's proxy. Port comes from $PORT.
+address = "0.0.0.0"
+enableXsrfProtection = true
 
 # Neutral light base. The app ships its own grayscale palette via CSS custom
 # properties with a Light/Dark toggle, so Streamlit's built-in dark colors

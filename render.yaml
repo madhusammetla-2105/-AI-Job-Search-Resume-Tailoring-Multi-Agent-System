@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: ai-job-search-multi-agent
+    runtime: python
+    plan: free
+    region: oregon
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: streamlit run ui/app.py --server.port $PORT --server.address 0.0.0.0
+    healthCheckPath: /_stcore/health
+    autoDeployTrigger: commit
+    envVars:
+      # Secrets are NOT set here. Add each one in the Render dashboard under
+      # Environment so the values stay out of git history:
+      #   GEMINI_API_KEY, OPENROUTER_API_KEY, GROQ_API_KEY,
+      #   SERPAPI_API_KEY, RAPIDAPI_KEY, DEFAULT_LLM_MODEL, USE_MOCK_SEARCH
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: PYTHONUNBUFFERED
+        value: "1"
