@@ -1,0 +1,18 @@
+# Core AI and Agentic Frameworks
+google-genai>=1.0.0
+pydantic>=2.6.0
+python-dotenv>=1.0.0
+
+# Document Parsing & Generation
+pypdf>=4.0.0
+reportlab>=4.1.0
+
+# Web & Networking
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+
+# Interactive UI Dashboard
+streamlit>=1.32.0
+
+# Tests
+pytest>=8.0.0

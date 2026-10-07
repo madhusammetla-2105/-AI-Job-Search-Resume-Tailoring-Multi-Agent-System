@@ -1,0 +1,18 @@
+[browser]
+serverAddress = "localhost"
+gatherUsageStats = false
+
+[server]
+headless = true
+port = 8501
+
+# Neutral light base. The app ships its own grayscale palette via CSS custom
+# properties with a Light/Dark toggle, so Streamlit's built-in dark colors
+# would otherwise paint dark surfaces onto the light theme.
+[theme]
+base = "light"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#FAFAFA"
+textColor = "#0B0B0C"
+primaryColor = "#0B0B0C"
+font = "sans serif"
